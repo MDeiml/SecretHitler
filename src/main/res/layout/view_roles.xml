@@ -24,6 +24,7 @@
         android:scaleType="fitXY"
         />
     <TextView
+        android:id="@+id/roleMessage"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Tap to view identity"

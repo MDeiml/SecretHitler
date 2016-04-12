@@ -204,5 +204,17 @@ public class Game implements Serializable {
     public int getGameState() {
         return gameState;
     }
+    
+    public String getName(int player) {
+        return names[player];
+    }
+    
+    public char getRole(int player) {
+        return playerRole[player];
+    }
+    
+    public int getNumPlayers() {
+        return numPlayers;
+    }
 
 }
