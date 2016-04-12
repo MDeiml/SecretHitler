@@ -1,8 +1,9 @@
 package com.mdeiml.secrethitler;
 
 import java.util.ArrayList;
+import java.io.*;
 
-public class Game {
+public class Game implements Serializable {
 
     public static final int CHOOSE_CHANCELLOR = 0;
     public static final int ELECT_CHANCELLOR = 1;
