@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.*;
 import android.view.*;
+import android.content.*;
 
 public class ChooseChancellorActivity extends Activity {
 
@@ -35,7 +36,9 @@ public class ChooseChancellorActivity extends Activity {
         ok.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(game.setChancellor(chancellor)) {
-                    Toast.makeText(getApplicationContext(),chancellor,Toast.LENGTH_LONG).show();//TODO: Call next activity
+                    Intent intent = new Intent(getApplicationContext(), ElectActivity.class);
+                    intent.putExtra("com.mdeiml.secrethitler.Game",game);
+                    startActivity(intent);
                 }
             }
         });

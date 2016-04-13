@@ -191,7 +191,7 @@ public class Game implements Serializable {
 
     public boolean[] getTopStack(int numCards) {
         if(stack.size() < numCards)
-            newStack(); //TODO
+            newStack();
 
         boolean[] res = new boolean[numCards];
         for(int i = 0; i < numCards; i++) {
@@ -214,6 +214,10 @@ public class Game implements Serializable {
 
     public int getNumPlayers() {
         return numPlayers;
+    }
+
+    public boolean isDead(int player) {
+        return playerDead[player];
     }
 
 }
