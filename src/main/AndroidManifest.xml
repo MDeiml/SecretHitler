@@ -5,7 +5,17 @@
       android:versionName="1.0">
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
         <activity android:name="ViewRolesActivity"
-                  android:label="@string/app_name" />
+                  android:label="@string/app_name"
+                  android:noHistory="true" />
+        <activity android:name="ChooseChancellorActivity"
+                  android:label="@string/app_name"
+                  android:noHistory="true" />
+        <activity android:name="ElectActivity"
+                  android:label="@string/app_name"
+                  android:noHistory="true" />
+        <activity android:name="PolicyActivity"
+                  android:label="@string/app_name"
+                  android:noHistory="true" />
         <activity android:name="MainActivity"
                   android:label="@string/app_name">
             <intent-filter>

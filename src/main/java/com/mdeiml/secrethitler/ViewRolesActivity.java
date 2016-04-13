@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.*;
 import android.view.*;
+import android.content.*;
 
 public class ViewRolesActivity extends Activity {
 
@@ -29,7 +30,11 @@ public class ViewRolesActivity extends Activity {
                         open = false;
                         message.setText("Tap to view identity");
                         name.setText(game.getName(currentP));
-                    } //TODO: else
+                    }else {
+                        Intent intent = new Intent(getApplicationContext(), ChooseChancellorActivity.class);
+                        intent.putExtra("com.mdeiml.secrethitler.Game", game);
+                        startActivity(intent);
+                    }
                 }else {
                     open = true;
                     switch(game.getRole(currentP)) {

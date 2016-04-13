@@ -21,7 +21,6 @@ public class Game implements Serializable {
     private ArrayList<Boolean> stack;
     private int president;
     private int chancellor;
-    private int lastChancellor;
     private boolean[] playerDead;
 
     private int gameState;
@@ -32,7 +31,7 @@ public class Game implements Serializable {
         this.fascistPolitics = 0;
         this.liberalPolitics = 0;
         this.president = (int)(Math.random() * numPlayers);
-        this.lastChancellor = -1;
+        this.chancellor = -1;
         this.gameState = CHOOSE_CHANCELLOR;
         this.playerDead = new boolean[numPlayers];
         for(int i = 0; i < numPlayers; i++) {
@@ -76,14 +75,14 @@ public class Game implements Serializable {
     public String[] getElectableChancellors() {
         int sum = 0;
         for(int i = 0; i < numPlayers; i++) {
-            if(i != lastChancellor && !playerDead[i]) {
+            if(i != president && i != chancellor && !playerDead[i]) {
                 sum++;
             }
         }
         String[] res = new String[sum];
         int index = 0;
         for(int i = 0; i < numPlayers; i++) {
-            if(i != lastChancellor && !playerDead[i]) {
+            if(i != president && i != chancellor && !playerDead[i]) {
                 res[index] = names[i];
                 index++;
             }
@@ -101,7 +100,7 @@ public class Game implements Serializable {
                 break;
             }
         }
-        if(lastChancellor == index || playerDead[index]) {
+        if(index == -1 || president != index && chancellor == index || playerDead[index]) {
             return false;
         }
         chancellor = index;
@@ -204,15 +203,15 @@ public class Game implements Serializable {
     public int getGameState() {
         return gameState;
     }
-    
+
     public String getName(int player) {
         return names[player];
     }
-    
+
     public char getRole(int player) {
         return playerRole[player];
     }
-    
+
     public int getNumPlayers() {
         return numPlayers;
     }
