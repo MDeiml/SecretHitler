@@ -175,9 +175,9 @@ public class Game implements Serializable {
     }
 
     private void nextPresident() {
-        int p = president;
-        while(playerDead[p]) {
-            p = (p + 1) % numPlayers;
+        president = (president+1)%numPlayers;
+        while(playerDead[president]) {
+            president = (president + 1) % numPlayers;
         }
     }
 

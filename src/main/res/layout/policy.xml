@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/policyMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEST"
+        />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="139dp"
+            android:src="@null"
+            android:id="@+id/policy0"
+            android:layout_margin="5dp"
+            />
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="139dp"
+            android:src="@null"
+            android:id="@+id/policy1"
+            android:layout_margin="5dp"
+            />
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="139dp"
+            android:src="@null"
+            android:id="@+id/policy2"
+            android:layout_margin="5dp"
+            />
+            
+    </LinearLayout>
+    
+</LinearLayout>
